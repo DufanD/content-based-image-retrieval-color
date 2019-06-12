@@ -1,0 +1,42 @@
+{% extends 'meowku/base.html' %} {% block content %}
+
+<main class="ui middle aligned center aligned grid" id="main-search">
+    <div class="column">
+        <div class="ui text container">
+            <a href="/meowku/image">
+                <img class="ui centered medium image" src="{{ url_for('static', filename='meowku/MeowKu.png') }}" alt="MeowKu">
+            </a>
+            <p>Pencari kucing kesayangan Anda</p>
+            <br/>
+            <form class="ui form" method="post" action="/meowku/image/result" enctype = "multipart/form-data">
+                <div class="field">
+                    <div class="ui fluid big icon input">
+                        <input type="file" name="search" required style="border-radius: 30px;">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+                <br/>
+                <div class="field">
+                    <input class="ui big primary button" type="submit" name="submit" value="Cari" style="border-radius: 30px;"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="ui text menu">
+        <div class="ui container">
+            <div class="item">
+                &copy; 2019
+            </div>
+            <div class="right item">
+                <a class="item">
+                    MeowKu Corporation
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
